@@ -1,0 +1,13 @@
+{
+  "folders": [
+    { "path": "." },
+    { "path": "./backend" },
+    { "path": "./frontend" }
+  ],"settings": {
+    "files.exclude": {
+      // hide first-level folders from root
+      "backend": true,
+      "frontend": true,
+    }
+  }
+}
