@@ -24,7 +24,8 @@
 		"esbenp.prettier-vscode"
 	],
 	"forwardPorts": [
-		3000
+		3000,
+		5000
 	],
 	"postCreateCommand": ".devcontainer/setup.sh",
 	"remoteUser": "vscode"

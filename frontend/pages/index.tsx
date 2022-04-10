@@ -43,7 +43,7 @@ export default Home;
 export const getServerSideProps: GetServerSideProps<Props> = async (
   context
 ) => {
-  const host = "http://localhost:4000";
+  const host = "http://localhost:3000";
   const resp = await fetch(`${host}/events`).then((resp) => resp.json());
   const eventData: EventData[] = resp["events"];
 
