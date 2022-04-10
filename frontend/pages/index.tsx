@@ -43,10 +43,9 @@ export default Home;
 export const getServerSideProps: GetServerSideProps<Props> = async (
   context
 ) => {
-  const eventData: EventData[] = [
-    { title: "event1", startAt: "2022-04-10", location: "foo" },
-    { title: "event2", startAt: "2022-04-09", location: "bar" },
-  ];
+  const host = "http://localhost:4000";
+  const resp = await fetch(`${host}/events`).then((resp) => resp.json());
+  const eventData: EventData[] = resp["events"];
 
   return {
     props: {
