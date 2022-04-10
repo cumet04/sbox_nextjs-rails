@@ -5,24 +5,27 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			// Update 'VARIANT' to pick a Ruby version: 3, 3.1, 3.0, 2, 2.7, 2.6
-			// Append -bullseye or -buster to pin to an OS version.
-			// Use -bullseye variants on local on arm64/Apple Silicon.
 			"VARIANT": "3.1",
-			// Options
 			"NODE_VERSION": "lts/*",
 			"INSTALL_ZSH": "false"
 		}
 	},
-	// Set *default* container specific settings.json values on container create.
-	"settings": {},
-	// Add the IDs of extensions you want installed when the container is created.
+	"settings": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll": true
+		},
+		"[typescriptreact]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+	},
 	"extensions": [
-		"rebornix.Ruby"
+		"rebornix.Ruby",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode"
 	],
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [
+		3000
+	],
 	"postCreateCommand": ".devcontainer/setup.sh",
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
 }
