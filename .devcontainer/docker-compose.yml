@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VARIANT: "3.1"
+        NODE_VERSION: "lts/*"
+        INSTALL_ZSH: "false"
+    init: true
+    volumes:
+      - ..:/workspace:cached
+      - npm:/home/vscode/.npm
+      - bundle:/usr/local/bundle
+    command: sleep infinity
+    ports:
+      - 5000:5000
+
+volumes:
+  npm:
+  bundle:

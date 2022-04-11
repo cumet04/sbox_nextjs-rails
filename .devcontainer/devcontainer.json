@@ -1,15 +1,10 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.231.5/containers/ruby
 {
-	"name": "Ruby",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"VARIANT": "3.1",
-			"NODE_VERSION": "lts/*",
-			"INSTALL_ZSH": "false"
-		}
-	},
+	"name": "Ruby and node",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"postCreateCommand": ".devcontainer/setup.sh",
+	"remoteUser": "vscode",
 	"settings": {
 		"editor.codeActionsOnSave": {
 			"source.fixAll": true
@@ -23,10 +18,4 @@
 		"dbaeumer.vscode-eslint",
 		"esbenp.prettier-vscode"
 	],
-	"forwardPorts": [
-		3000,
-		5000
-	],
-	"postCreateCommand": ".devcontainer/setup.sh",
-	"remoteUser": "vscode"
 }
