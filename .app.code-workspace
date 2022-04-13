@@ -1,11 +1,13 @@
 {
   "folders": [
     { "path": "." },
+    { "path": "./infra" },
     { "path": "./backend" },
     { "path": "./frontend" }
   ],"settings": {
     "files.exclude": {
       // hide first-level folders from root
+      "infra": true,
       "backend": true,
       "frontend": true,
     }
